@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    char T[100],C[100];
+    int i,j,L,k,LET,b,O;
+    printf("End text with '~' \n");
+    for (LET=1; LET <= 100; LET++)
+    {
+        scanf("%c", &T[LET]);
+        if (T[LET] == ' ' || T[LET] == '\n')
+            j++;
+        if (T[LET] == '~')
+        {
+            T[LET] = ' ';
+            j++;
+            L=(LET-j);
+            break;
+        }
+    }
+
+    for (int N=0; N<2;N++)
+    {
+        for (O=0; O<LET; O++)
+            printf("%c", T[O]);
+            printf(", ");
+    }
+    for (O=0; O<LET; O++)
+            printf("%c", T[O]);
+    
+    printf("\n AllEx(L)-%d, SUMM-%d, ALL(LET)-%d", L, L*3+2, LET);
+    return 0;
+}
